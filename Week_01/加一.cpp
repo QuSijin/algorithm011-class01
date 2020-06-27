@@ -11,7 +11,7 @@ public:
             else
                 digits[i]=0;        //进位
         }
-        digits.insert(digits.begin(), 1);       //如果首位也产生进位,才会执行到这条语句，否则循环中已经return了
+        digits.insert(digits.begin(), 1);       //首位进位
         return digits;
     }
 };
