@@ -1,14 +1,14 @@
 # 学习笔记
 ## 1.习题中的笔记
 ### 1）加一：
-一些标准操作：
+#### 一些标准操作：
         digits.insert(digits.begin(), 1); //首位进位的操作
 ### 2）两数之和：
-标准嵌套循环：
+#### 标准嵌套循环：
         for(int i=0;i<nums.size()-1;i++)
         for(int j=i+1;j<nums.size();j++)
 ### 3）旋转数组：
-rotate函数：
+#### rotate函数：
         std::rotate(nums.begin(), nums.end() - k % nums.size(), nums.end());// k % nums.size()考虑了k>nums.size()的情况
 ### 4）设计双端循环队列
 #### assign函数--复制vector的值：
@@ -20,7 +20,7 @@ rotate函数：
 ## 2.知识点总结
 ### 1）快慢指针
 #### 一些标准操作：
-        faster = faster->next->next;  //快的运动员每次跑两步
+	faster = faster->next->next;  //快的运动员每次跑两步
 	slower = slower->next;  //慢的运动员每次跑一步
 	if (faster == slower)  //他们在比赛中相遇了
 	return true;  //可以断定是环形道，直道不可能相遇
