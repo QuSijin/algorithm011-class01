@@ -5,8 +5,8 @@
         digits.insert(digits.begin(), 1); //首位进位的操作
 ### 2）两数之和：
 标准嵌套循环：
-        for(int i=0;i<nums.size()-1;i++)
-        for(int j=i+1;j<nums.size();j++)
+        ①for(int i=0;i<nums.size()-1;i++)
+        ②for(int j=i+1;j<nums.size();j++)
 ### 3）旋转数组：
 rotate函数：
         std::rotate(nums.begin(), nums.end() - k % nums.size(), nums.end());// k % nums.size()考虑了k>nums.size()的情况
