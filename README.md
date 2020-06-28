@@ -14,16 +14,16 @@ rotate函数：
 assign函数--复制vector的值：
         arr.assign(capacity, 0);
 一些标准操作：
-        capacity = k + 1; //防止混淆队列为空与队列满
-        front = (front - 1 + capacity) % capacity;//为了循环到数组的末尾，需要先加上数组的长度，然后再对数组长度取模
-        return arr[(rear - 1 + capacity) % capacity];// 当 rear 为 0 时防止数组越界
+        ①capacity = k + 1; //防止混淆队列为空与队列满
+        ②front = (front - 1 + capacity) % capacity;//为了循环到数组的末尾，需要先加上数组的长度，然后再对数组长度取模
+        ③return arr[(rear - 1 + capacity) % capacity];// 当 rear 为 0 时防止数组越界
 ## 2.知识点总结
 ### 1）快慢指针
 一些标准操作：
-        faster = faster->next->next;  //快的运动员每次跑两步
-		    slower = slower->next;  //慢的运动员每次跑一步
-		    if (faster == slower)  //他们在比赛中相遇了
-			  return true;  //可以断定是环形道，直道不可能相遇
+        ①faster = faster->next->next;  //快的运动员每次跑两步
+	②slower = slower->next;  //慢的运动员每次跑一步
+	③if (faster == slower)  //他们在比赛中相遇了
+	④return true;  //可以断定是环形道，直道不可能相遇
 ### 2）栈
         最近相关性
 ### 3）队列
