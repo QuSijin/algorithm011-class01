@@ -6,28 +6,22 @@ c++11: map 数据结构：红黑树--时间复杂度O(logN)
 2.堆
 定义方式:
 std::priority_queue<int, std::vector<int>, std::greater<int> > pq;
-class Solution {
-public:
-    vector<int> topKFrequent(vector<int>& nums, int k) {
-        priority_queue<pair<int,int>,vector<pair<int,int>>,
-        greater<pair<int,int>>>pq;
-        unordered_map<int,int>cnt;
-
-        for(auto num : nums) cnt[num]++;//统计频次放在cnt里
-
-        for(auto kv:cnt) {
-            pq.push({kv.second,kv.first});//按频次，频次高的放前面大顶堆
-            while(pq.size() > k) pq.pop();//大于k时，把低频元素清理掉
-        }
-
-        vector<int> res;
-        while(!pq.empty())
-        {
-            res.push_back(pq.top().second);
-            pq.pop();
-        }
-        return res;
-    }
-};
-
+3.二叉堆实现细节：
+	1)二叉堆一般都通过“数组”来实现
+	2)假设“第一个元素”在数组中的索引为0的话，则父结点和子结点的位置关系如下
+	索引为i的左孩子的索引是(2*i+1)
+	索引为i的左孩子的索引是(2*i+2)
+	索引为i的父结点的索引是floor((i-1)/2)
+4.二叉堆性质
+通过完全二叉树来实现
+二叉堆(大顶)满足下列性质:
+	1)是一颗完全树
+	2)树中任意节点的值总是>=真子结点的值
+5.图--V，E
+	V--点
+	1)度，入度和出度--连接的边数
+	2)点与点之间：连通与否
+	E--边
+	1)有向和无向(单行线)
+	2)权重(边长)
      
